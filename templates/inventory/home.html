@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Home</h1>
+    {% for storage in storages %}
+        <h2>{{ storage.id }} - {{ storage.name }}</h2>
+    {% endfor %}
+{% endblock %}

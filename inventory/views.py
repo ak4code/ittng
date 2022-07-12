@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import Storage
 
-# Create your views here.
+
+def home(request):
+    storages = Storage.objects.all()
+    return render(request, 'inventory/home.html', {"storages": storages})
