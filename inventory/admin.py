@@ -2,13 +2,8 @@ from django.contrib import admin
 from .models import Storage, Organization
 
 
-class OrganizationInlines(admin.TabularInline):
-    model = Organization
-    extra = 1
-
-
 class StorageAdmin(admin.ModelAdmin):
-    inlines = (OrganizationInlines,)
+    pass
 
 
 admin.site.register(Storage, StorageAdmin)

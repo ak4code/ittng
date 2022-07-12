@@ -14,8 +14,7 @@ class Storage(models.Model):
 
 class Organization(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название')
-    storage = models.ForeignKey('Storage', blank=True, null=True, related_name='organizations',
-                                on_delete=models.SET_NULL, verbose_name='склад')
+    storage = models.ManyToManyField('Storage', blank=True, related_name='organizations', verbose_name='Склады')
 
     def __str__(self):
         return self.name
