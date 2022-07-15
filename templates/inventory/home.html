@@ -2,6 +2,7 @@
 
 {% block content %}
     <h1>Home</h1>
+    <greating-page hello="World"></greating-page>
     {% for storage in storages %}
         <h2>{{ storage.id }} - {{ storage.name }}</h2>
         <ul>

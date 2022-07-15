@@ -1,12 +1,18 @@
+{% load manifest %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
+    {% manifest_match '*.css' '<link href="{match}" rel="preload" as="style">' %}
+    {% manifest_match '*.js' '<link href="{match}" rel="preload" as="script">' %}
+    {% manifest_match '*.css' '<link href="{match}" rel="stylesheet">' %}
 </head>
 <body>
-<div>
+<div id="ittng">
     {% block content %}{% endblock %}
 </div>
+{% manifest_match '*.js' '<script src="{match}" async></script>' %}
 </body>
 </html>
